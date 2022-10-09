@@ -2,6 +2,7 @@ const http = require('http');
 
 
 const port = process.env.PORT || 3000;
+const test = process.env.myBeautifulVariable || "whoops";
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -10,5 +11,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`Server running at ${port}`);
+  console.log(`Server running at ${port}. Let's test it: ${test}`);
 });
